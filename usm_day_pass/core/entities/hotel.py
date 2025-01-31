@@ -16,3 +16,10 @@ class Hotel:
             raise ValueError("The price should not be greater than 0.")
         if not self.name:
             raise ValueError("The name should not be empty.")
+        
+    def to(self):
+        """Converts current 'Hotel' instance in dict"""
+        return {
+            key: value for key, value in self.__dict__.items()
+            if not key.startswith('_')
+        }

@@ -1,9 +1,13 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from usm_day_pass.app import Core
 
 
 app = Flask(__name__)
 core = Core()
+
+@app.route('/')
+def index():
+    return render_template('passes.html', passes=core.passes_service.list(to_dict=True))
 
 @app.route('/passes', methods=['GET'])
 def list_passes():
