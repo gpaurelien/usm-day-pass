@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "usm_day_pass"
+version = "0.1.0"
+description = "A service for managing day passes for hotels and clubs"
+authors = ["abokanyz@gmail.com"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^2.0"
+# SQLite is generally included with Python3, no need to include it
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+black = "^21.0"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
