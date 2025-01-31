@@ -1,4 +1,4 @@
-# USM day passes
+# USM day pass
 
 This service provides access to exclusive day passes for 5-star hotels across the beautiful island of Koh Samui, Thailand. Our primary goal is to serve the community by offering a platform that connects users with luxurious hotel experiences, and it is **fully open source** to encourage collaboration and the inclusion of as many clubs as possible.
 
@@ -28,4 +28,4 @@ To get started with the USM day pass service, follow these steps:
 
 ## Contributing
 
-We welcome contributions to the USM day pass project! If you have suggestions, improvements, or new clubs to add, please fork the repository and submit a pull request. Together, we can expand our network and enhance the service for everyone.
+We welcome contributions to the USM day passes project! If you have suggestions, improvements, or new clubs to add, please fork the repository and submit a pull request. Together, we can expand our network and enhance the service for everyone.
