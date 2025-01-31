@@ -4,6 +4,7 @@ from typing import Optional
 
 @dataclass
 class Hotel:
+    id: int
     name: str
     stars: int
     price: float
