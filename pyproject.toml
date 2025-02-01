@@ -8,7 +8,10 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.8"
 flask = "^2.0"
-# SQLite is generally included with Python3, no need to include it
+sqlalchemy = "^2.0.0"
+psycopg2-binary = "^2.9.0"
+alembic = "^1.13.0"
+python-dotenv = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.0"
