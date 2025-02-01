@@ -3,6 +3,8 @@ import typing as t
 from usm_day_pass.core.entities import Hotel
 
 
+# TODO: this adapter could be deleted
+
 class Passes:
     def __init__(self, db: str):
         self.db = sqlite3.connect(db, check_same_thread=False)

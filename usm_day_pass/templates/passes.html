@@ -11,48 +11,70 @@
             margin: 0;
             padding: 20px;
         }
-        h1 {
-            text-align: center;
+        .hotels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .hotel-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .hotel-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .hotel-info {
+            padding: 15px;
+        }
+        .hotel-name {
+            font-size: 1.2em;
+            margin: 0 0 10px 0;
             color: #333;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        .hotel-price {
+            font-weight: bold;
+            color: #2ecc71;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        .stars {
+            color: #f1c40f;
         }
     </style>
 </head>
 <body>
-
     <h1>Places offering day passes</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Resort name</th>
-                <th>Pass price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for pass in passes %}
-            <tr>
-                <td>{{ pass.name }}</td>
-                <td>{{ pass.price }}$</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    
+    <p>
+        All establishment names are clickable and redirect to their original sites
+    </p>
 
+    <div class="hotels-grid">
+        {% for pass in passes %}
+        <div class="hotel-card">
+            {% if pass.photo_url %}
+                <img class="hotel-image" src="{{ pass.photo_url }}" alt="{{ pass.name }}">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+            <div class="hotel-info">
+                <h2 class="hotel-name">{{ pass.name }}</h2>
+                <div class="stars">
+                    {% for _ in range(pass.stars) %}⭐{% endfor %}
+                </div>
+                <p class="hotel-price">{{ pass.price }}$</p>
+                {% if pass.restaurant %}
+                    <p>🍽️ Restaurant available</p>
+                {% endif %}
+                {% if pass.childs_allowed %}
+                    <p>👶 Children allowed</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

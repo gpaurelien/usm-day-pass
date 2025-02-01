@@ -1,9 +1,14 @@
 from flask import Flask, jsonify, render_template
 from usm_day_pass.app import Core
+import logging
 
 
 app = Flask(__name__)
-core = Core()
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)  # TODO: add an util that returns a logger
+
+core = Core(logger=logger)
 
 @app.route('/')
 def index():
@@ -19,4 +24,4 @@ def get_pass_stars(stars):
 
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)

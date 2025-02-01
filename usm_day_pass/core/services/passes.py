@@ -10,19 +10,19 @@ logger = logging.getLogger(__name__)
 class Passes:
     def __init__(
         self,
-        passes_adapter: interfaces.Passes,
+        passes_repository: interfaces.PassesRepository,
         logger: logging.Logger = logger,
     ) -> None:
-        self.passes_adapter = passes_adapter
+        self.passes_repository = passes_repository
         self.logger = logger
 
     def list(self, to_dict: bool = False) -> t.List[Hotel]:
+        clubs = self.passes_repository.get_all()
         if to_dict:
-            clubs = self.passes_adapter.list()
             for club in clubs:
                 club.to()
             return clubs
-        return self.passes_adapter.list()
+        return clubs  # will be jsonified
 
     def get_pass_stars(self, stars: int) -> list:
-        return self.passes_adapter.get_pass_stars(stars)
+        pass
