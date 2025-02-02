@@ -4,7 +4,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
-from usm_day_pass.core.repositories.tables import Base, HotelModel
+from usm_day_pass.repositories.tables import Base, HotelModel
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

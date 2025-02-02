@@ -10,7 +10,7 @@ class Hotel:
     price: float
     restaurant: bool
     childs_allowed: Optional[bool]
-    photo_url: Optional[str] = None
+    photo_url: Optional[str]
 
     def validate(self):
         if self.price <= 0:

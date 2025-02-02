@@ -1,6 +1,6 @@
 import typing as t
 import logging
-from usm_day_pass.core import repositories as r
+from usm_day_pass import repositories as r
 from usm_day_pass.core import interfaces
 from usm_day_pass.core import services as s
 from sqlalchemy import create_engine
@@ -16,6 +16,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class Core:
+    """This class represents the entry point of the application"""
     def __init__(
         self,
         logger: t.Optional[logging.Logger] = None,

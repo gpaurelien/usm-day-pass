@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Optional, Type
 from usm_day_pass.core.entities import Hotel
 from sqlalchemy import (
     Column,
